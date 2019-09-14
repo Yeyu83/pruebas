@@ -8,20 +8,20 @@ import { FormBuilder } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
-  formulario;
+  formulario: any;
 
   constructor(
     private formBuilder: FormBuilder
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.createForm();
     this.formulario.valueChanges.subscribe(formValue => {
       console.log(formValue);
     });
   }
 
-  createForm() {
+  createForm(): void {
     this.formulario = this.formBuilder.group({
       nombre: [''],
       apellidos: [''],
